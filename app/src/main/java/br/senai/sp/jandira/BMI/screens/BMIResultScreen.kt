@@ -14,8 +14,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
@@ -78,6 +81,7 @@ fun BMIResultScreen(modifier: Modifier = Modifier) {
                 ) {
                     Card(
                         modifier = Modifier
+                            .padding(top = 20.dp)
                             .size(130.dp),
                         colors = CardDefaults
                             .cardColors(
@@ -122,9 +126,9 @@ fun BMIResultScreen(modifier: Modifier = Modifier) {
                     )
                     Card(
                         modifier = Modifier
+                            .padding(20.dp)
                             .height(100.dp)
                             .width(300.dp)
-                            .background(color = Color.White)
 
 
                     ) {
@@ -198,11 +202,41 @@ fun BMIResultScreen(modifier: Modifier = Modifier) {
                                 )
                             }
                         }
-        Card (
-    modifier = Modifier
-){
 
-}
+
+                    }
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(250.dp)
+                    ) {}
+                    HorizontalDivider(
+                        modifier = Modifier
+                            .padding(top = 20.dp)
+                            .height(10.dp)
+                    )
+                    Button(onClick = {},
+                        colors = ButtonDefaults.buttonColors(Color.Blue),
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .width(300.dp)
+                            .height(50.dp),
+                        shape = RoundedCornerShape(
+                            topStart = 10.dp,
+                            topEnd = 10.dp,
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp
+                        )
+
+                    )
+                    {
+                        Text(text = stringResource(R.string.newcalc),
+                            color = Color.White,
+                            fontSize = 25.sp,
+                            modifier = Modifier
+                        )
+
+
                     }
                 }
             }

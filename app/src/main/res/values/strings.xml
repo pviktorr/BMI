@@ -13,5 +13,7 @@
     <string name="result">Your BMI Result</string>
     <string name="Number">30,6</string>
     <string name="obesity">You have Class I Obesity</string>
+    <string name="newcalc"> New Calc</string>
+
 
 </resources>

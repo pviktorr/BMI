@@ -13,5 +13,6 @@
     <string name="result"> Seu IMC</string>
     <string name="Number">30,6</string>
     <string name="obesity"> Você é Obeso I</string>
+    <string name="newcalc"> New Calc</string>
 
 </resources>
