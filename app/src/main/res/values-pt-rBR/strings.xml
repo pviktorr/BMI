@@ -10,5 +10,8 @@
     <string name="weight">Peso</string>
     <string name="height">Altura</string>
     <string name="calculate">Calcular</string>
+    <string name="result"> Seu IMC</string>
+    <string name="Number">30,6</string>
+    <string name="obesity"> Você é Obeso I</string>
 
 </resources>
