@@ -51,12 +51,21 @@ import br.senai.sp.jandira.BMI.R
 @Composable
 fun UserDataScreen(navegacao: NavHostController?) {
 
-    var nameState = remember {
+
+
+    var ageState = remember {
+        mutableStateOf( "")
+    }
+    var weightState = remember {
+        mutableStateOf( "")
+    }
+    var heightState = remember {
         mutableStateOf( "")
     }
     val context = LocalContext.current
     val userFile = context.getSharedPreferences("user_file", Context.MODE_PRIVATE)
     val userName = userFile.getString("user_name", "")
+
 
     val editor = userFile.edit()
 
@@ -197,9 +206,11 @@ fun UserDataScreen(navegacao: NavHostController?) {
                         modifier = Modifier
                             .fillMaxWidth()
                     ) {
-                        OutlinedTextField(value =
+                        OutlinedTextField(
+                            value = ageState.value,
 
-                            onValueChange = {
+                            onValueChange = { it ->
+                                ageState.value = it
 
                             },
                             modifier = Modifier
@@ -221,8 +232,10 @@ fun UserDataScreen(navegacao: NavHostController?) {
                                     capitalization = KeyboardCapitalization.Words
                                 )
                         )
-                        OutlinedTextField(value = "",
-                            onValueChange = {},
+                        OutlinedTextField(value = weightState.value,
+                            onValueChange = { it ->
+                                weightState.value = it
+                            },
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(vertical = 8.dp),
@@ -244,8 +257,11 @@ fun UserDataScreen(navegacao: NavHostController?) {
                             )
 
                         )
-                        OutlinedTextField(value = "",
-                            onValueChange = {},
+                        OutlinedTextField(value = heightState.value,
+                            onValueChange = {
+                                it ->
+                                heightState.value = it
+                            },
                             modifier = Modifier
                                 .fillMaxWidth(),
                             leadingIcon = {
@@ -270,12 +286,15 @@ fun UserDataScreen(navegacao: NavHostController?) {
                     }
                     Button(
                         onClick = {
-                            editor.putFloat("user_weight", age)
+                            var editor = userFile.edit()
+
                             editor.apply()
                             navegacao?.navigate("bmi_result")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
+                            .height(48.dp),
+                        shape = RoundedCornerShape(16.dp)
 
                     ) {
                         Text(text = stringResource(R.string.calculate))

@@ -14,5 +14,11 @@
     <string name="Number">30,6</string>
     <string name="obesity"> Você é Obeso I</string>
     <string name="newcalc"> New Calc</string>
+    <string name="under_weight">Você está abaixo do seu peso ideal</string>
+    <string name="normal_weight">Você tem peso corporal normal</string>
+    <string name="over_weight">Você está levemente acima do peso</string>
+    <string name="class1_weight">Você tem Obesidade Grau I</string>
+    <string name="class2_weight">Você tem Obesidade Grau II</string>
+    <string name="class3_weight">Você tem Obesidade Grau III</string>
 
 </resources>
